@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tuxpiper/ubuntu-ansible-docker.svg?branch=master)](https://travis-ci.org/tuxpiper/ubuntu-ansible-docker)
+
 # Docker container images for Ansible playbook testing against Ubuntu
 
 There are two Docker container images defined here
