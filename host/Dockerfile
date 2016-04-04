@@ -1,4 +1,4 @@
-FROM ubuntu-ansible-docker:base
+FROM tuxpiper/ubuntu-ansible-docker:base
 
 RUN apt-get update && \
     apt-get install -y python-dev python-pip && \
