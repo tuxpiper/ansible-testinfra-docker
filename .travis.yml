@@ -1,4 +1,3 @@
-air:ubuntu-ansible-docker losi$ cat ../ideapod/service-feed/.travis.yml
 language: bash
 
 sudo: required
