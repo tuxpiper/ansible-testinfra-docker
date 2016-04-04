@@ -2,9 +2,9 @@ version: "2"
 services:
   base:
     build: base
-    image: ubuntu-ansible-docker:base
+    image: tuxpiper/ubuntu-ansible-docker:base
   host:
     build: host
-    image: ubuntu-ansible-docker:host
+    image: tuxpiper/ubuntu-ansible-docker:host
     depends_on:
       - base
