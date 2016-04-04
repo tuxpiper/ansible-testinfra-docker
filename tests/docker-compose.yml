@@ -1,0 +1,15 @@
+# run with docker-compose run --rm host
+version: "2"
+services:
+  target:
+    image: ubuntu-ansible-docker:base
+  host:
+    image: ubuntu-ansible-docker:host
+    depends_on:
+      - target
+    volumes:
+      - ./ansible_hosts:/etc/ansible/hosts
+      - ./run_tests.sh:/tests/run_tests.sh
+      - ./test_ssh:/tests/test_ssh
+      - ./test_ansible:/tests/test_ansible
+    command: [ /bin/bash, '/tests/run_tests.sh' ]
