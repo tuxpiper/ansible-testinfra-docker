@@ -1,8 +1,10 @@
 #!/bin/bash
 
-set -e
-
 cd $(dirname $0)
+
+pushd ansible
+ansible-playbook playbook.yml || exit 1
+popd
 
 pushd test_ssh
 testinfra -vvv --hosts=target test_ssh.py

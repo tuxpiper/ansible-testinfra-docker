@@ -8,3 +8,6 @@ def test_ping(Ansible):
 
 def test_file(File):
     assert File('/etc/passwd').exists
+
+def test_tmp_test(File):
+	assert File('/tmp/test').is_directory

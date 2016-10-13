@@ -7,7 +7,7 @@ services:
 
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.6.2
+    - DOCKER_COMPOSE_VERSION=1.8.1
 
 before_install:
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
@@ -17,9 +17,7 @@ before_install:
      curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose &&
      chmod +x docker-compose &&
      sudo mv docker-compose /usr/local/bin
-
-before_script:
-  - sudo docker-compose build
+  - ./build.sh
 
 script:
-  - cd tests && sudo docker-compose run --rm host
+  - cd example && sudo docker-compose run --rm cc

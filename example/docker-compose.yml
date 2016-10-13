@@ -1,0 +1,12 @@
+# run with docker-compose run --rm host
+version: "2"
+services:
+  target:
+    image: tuxpiper/ansible-testinfra-docker:ubuntu-trusty
+  cc:
+    image: tuxpiper/ansible-testinfra-docker:ubuntu-trusty-cc
+    depends_on:
+      - target
+    volumes:
+      - ./tests:/tests
+    command: /tests/run_tests.sh

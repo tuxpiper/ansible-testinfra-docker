@@ -1,0 +1,5 @@
+---
+- hosts: target
+  tasks:
+  - name: ensure there's a /tmp/test directory
+    file: path=/tmp/test state=directory
